@@ -1,6 +1,6 @@
 # Soil Water Retention Prediction App
 
-A Shiny application for predicting soil water retention characteristics using Random Forest models trained on the public subset of the EU-HYDI soil database.
+A Shiny application for predicting soil water retention characteristics using Random Forest models trained on the collected samples (Czech Republic).
 
 The application predicts:
 
