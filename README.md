@@ -4,9 +4,9 @@ A Shiny application for predicting soil water retention characteristics using Ra
 
 The application predicts:
 
-- FC10 (Field Capacity at pF 2.0, −10 kPa)
-- FC33 (Field Capacity at pF 2.5, −33 kPa)
-- PWP  (Permanent Wilting Point, −1500 kPa)
+- **FC10** (Field Capacity at pF 2.0, −10 kPa)
+- **FC33** (Field Capacity at pF 2.5, −33 kPa)
+- **PWP** (Permanent Wilting Point, −1500 kPa)
 
 Predictions are generated from four commonly available soil properties:
 
@@ -21,7 +21,7 @@ Separate models are used for **topsoil** and **subsoil** samples.
 
 # Repository Structure
 
----
+```text
 .
 ├── app.R
 ├── models/
@@ -32,7 +32,7 @@ Separate models are used for **topsoil** and **subsoil** samples.
 │   ├── ranger_loso_bundle_FC33_Top.rds
 │   └── ranger_loso_bundle_PWP_Top.rds
 └── README.md
----
+```
 
 ---
 
@@ -48,8 +48,7 @@ Download and install R:
 
 Run:
 
-R
----
+```r
 install.packages(c(
   "shiny",
   "DT",
@@ -57,7 +56,7 @@ install.packages(c(
   "writexl",
   "caret"
 ))
----
+```
 
 ---
 
@@ -65,17 +64,15 @@ install.packages(c(
 
 Open R or RStudio in the repository directory and run:
 
-R
----
+```r
 shiny::runApp()
----
+```
 
 or
 
-R
----
+```r
 source("app.R")
----
+```
 
 The application will open in your default web browser.
 
@@ -85,15 +82,15 @@ The application will open in your default web browser.
 
 The application requires the following columns:
 
-| Column   | Description                  | Unit   |
-|----------|------------------------------|--------|
-| Sand     | Sand content                 | %      |
-| Silt     | Silt content                 | %      |
-| Clay     | Clay content                 | %      |
-| Cox      | Organic carbon content       | %      |
-| Depth    | Soil layer identifier        | T or B |
-| Sample_ID| Sample identifier (optional) | text   |
-| Location | Sampling location (optional) | text   |
+| Column | Description | Unit |
+|----------|------------|---------|
+| Sand | Sand content | % |
+| Silt | Silt content | % |
+| Clay | Clay content | % |
+| Cox | Organic carbon content | % |
+| Depth | Soil layer identifier | T or B |
+| Sample_ID | Sample identifier (optional) | text |
+| Location | Sampling location (optional) | text |
 
 Only the four predictor variables are required for prediction.
 
@@ -114,22 +111,20 @@ If the depth is missing, the subsoil model is used by default.
 
 # Example Input File
 
-csv
----
+```csv
 Sample_ID,Location,Depth,Sand,Silt,Clay,Cox
 S001,Site_A,T,45,35,20,1.25
 S002,Site_A,B,38,41,21,0.82
 S003,Site_B,T,62,21,17,1.68
----
+```
 
 European CSV files using decimal commas are also supported:
 
-csv
----
+```csv
 Sample_ID;Location;Depth;Sand;Silt;Clay;Cox
 S001;Site_A;T;45;35;20;1,25
 S002;Site_A;B;38;41;21;0,82
----
+```
 
 ---
 
@@ -192,9 +187,9 @@ A warning message will indicate how many rows were omitted.
 
 If you use this application in scientific work, please cite the associated publication:
 
----
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
----
+```text
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+```
 
 ---
 
