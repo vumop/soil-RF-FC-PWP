@@ -1,0 +1,4 @@
+﻿Sample_ID,Location,Depth,Sand,Silt,Clay,Cox
+S001,Site_A,T,45,35,20,1.25
+S002,Site_A,B,38,41,21,0.82
+S003,Site_B,T,62,21,17,1.68
